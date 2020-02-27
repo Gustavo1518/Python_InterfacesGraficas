@@ -11,7 +11,7 @@ class InicioSesion:
         self.master.geometry("300x300")
                
     def marcoingreso(self):
-        self.marco1 = tk.Frame(self.master.pady='20')
+        self.marco1 = tk.Frame(self.master.Pady='20')
         self.marco1.pack()
         
         self.etiqueta =tk.Label(self.marco1,text="Contrasena")
@@ -31,7 +31,7 @@ class InicioSesion:
         self.contenido = self.contrasena.get()
         self.contrasena.delete()
         if self.contenido == "Gustavo":
-           self.etiqueta2["text"]= "contraseña correcta"
+            self.etiqueta2["text"]= "contraseña correcta"
         else:
             self.etiqueta2["text"] = "contraseña incorrecta"
             self.marco2.pack()
