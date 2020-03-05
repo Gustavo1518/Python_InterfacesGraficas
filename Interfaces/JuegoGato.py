@@ -6,7 +6,7 @@ class Gato:
         self.root=root
         self.Inicio()
     def Inicio(self):
-        self.root.title("Juego del gato")
+        self.root.title("Inicio Juego del gato")
         self.marcoinicio = tk.Frame(self.root)
         self.marcoinicio.grid()
         
@@ -23,7 +23,7 @@ class Gato:
                           anchor='w', command = self.root.quit).grid(row=3, column=0, stichy='ew')
         
     def Datos(self):
-        self.title("Jugadores")
+        self.title("Datos jugadores")
         self.marcodatos = tk.Frame(self.root)
         self.marcodatos.grid()
         
@@ -40,21 +40,21 @@ class Gato:
         regresar= tk.Button(self.marconombres, text="regresar", fg="blue", bg="white",
                              command = lambda: self.cambiarpantalla('c'), anchor="w").grid(row=3, column=0,stichy="ew", columnspan=2)
         salir = tk.Button(self.marconombres, text="salir", fg="blue", bg="white",
-                          command = self.root.quit, anchor='w').grid(row=3, column=0,stichy="ew", columnspan=2)
+                          command =self.root.squit, anchor='w').grid(row=3, column=0,stichy="ew", columnspan=2)
         
     def Partida(self):
         self.title("Partida")
         self.marcopartida = tk.Frame(self.root)
         self.marcopartida.grid()
-        
         self.casillas = []
         k=0
+        
         for i in range (3):
             for j in range (3):
                 self.casillas.append(Button(self.marcopartida, fg="blue", bg="white", bd=1,width=5,
                                             command = lambda e=k: self.mostrarcasilla(e)))
                 self.casillas[k].grid(row=i, column = j)
-                k+=1
+                k=+1
             jugarOtraVez = tk.Button(self.marcopartida, text="Jugar de nuevo", fg="blue", bg="white",
                                      command = lambda: self.cambiarpantalla('d'), anchor='w').grid(row=4, column=0,stichy='ew', columnspan=3)
             salir = tk.Button(self.marcopartida, text="salir del juego", fg="blue", bg="white",
